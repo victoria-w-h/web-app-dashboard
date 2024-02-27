@@ -1,6 +1,7 @@
 const trafficCanvas = document.getElementById("trafficChart");
 const dailyTrafficCanvas = document.getElementById("dailyTrafficChart");
 const mobileUsersCanvaas = document.getElementById("mobileUsersChart");
+
 new Chart(trafficCanvas, {
 	type: "line",
 	data: {
@@ -30,6 +31,7 @@ new Chart(trafficCanvas, {
 		],
 	},
 	options: {
+		responsive: true,
 		aspectRatio: 2.5,
 		animation: {
 			duration: 0,
@@ -59,14 +61,14 @@ new Chart(dailyTrafficCanvas, {
 			{
 				data: [75, 115, 175, 125, 225, 200, 100],
 				backgroundColor: "rgba(116, 119, 191, 1)",
-				borderWidth: 2,
-				borderColor: "#696BAC",
 				fill: true,
 			},
 		],
 	},
 	options: {
+		responsive: true,
 		aspectRatio: 2.5,
+
 		animation: {
 			duration: 0,
 		},
@@ -96,6 +98,7 @@ new Chart(mobileUsersCanvaas, {
 		],
 	},
 	options: {
+		responsive: true,
 		aspectRatio: 1.9,
 		plugins: {
 			legend: {
