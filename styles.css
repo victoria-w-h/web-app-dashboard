@@ -1,9 +1,3 @@
-* {
-	font-family: "Raleway", sans-serif;
-	font-optical-sizing: auto;
-	font-weight: 400;
-	font-style: normal;
-}
 :root {
 	--primary: #7577bf;
 	--accent: #4d4c72;
@@ -12,9 +6,33 @@
 	--grey: #f5f5f5;
 	--darkGrey: #777777;
 }
+* {
+	font-family: "Raleway", sans-serif;
+	font-optical-sizing: auto;
+	font-weight: 400;
+	font-style: normal;
+}
+/* element styling */
 body {
 	margin: 0;
 }
+ul {
+	padding: 0;
+}
+li {
+	list-style-type: none;
+}
+a {
+	color: white;
+	text-decoration: none;
+}
+p {
+	margin: 0;
+}
+
+@media screen and (min-width: 768px) {
+}
+/* class styles */
 .grid {
 	display: grid;
 }
@@ -34,22 +52,7 @@ body {
 .space-around {
 	justify-content: space-around;
 }
-ul {
-	padding: 0;
-}
-li {
-	list-style-type: none;
-}
-a {
-	color: white;
-	text-decoration: none;
-}
-p {
-	margin: 0;
-}
-h1 {
-	font-size: 21px;
-}
+
 .font-medium {
 	font-weight: 600;
 }
@@ -72,37 +75,72 @@ h1 {
 			"nav main";
 	}
 }
-/* header */
+
+/*------------------------ HEADER -------------------------*/
 .header {
-	padding: 20px 10px;
 	grid-area: header;
+
+	padding: 20px 10px;
+
 	color: var(--white);
 	background-color: var(--primary);
+}
+h1 {
+	font-size: 22px;
+}
+/*header profile */
+
+.header-profile {
+	padding: 10px 0 10px 10px;
+
+	border-left: 1px solid var(--grey);
+}
+
+.header-profile-img {
+	border-radius: 100%;
+
+	width: 40px;
+	height: 40px;
+}
+
+.header-name {
+	font-size: 12px;
+}
+@media screen and (min-width: 768px) {
+	.header {
+		padding: 20px;
+	}
+	h1 {
+		font-size: 27px;
+	}
+	.header-name {
+		font-size: 16px;
+	}
+}
+
+/* Notification profile */
+
+.notification-container {
+	padding: 0 10px;
+	height: fit-content;
+	position: relative;
+}
+
+.notification-container .dot {
+	width: 5px;
+	height: 5px;
+	background-color: rgb(92, 255, 92);
+	border-radius: 50%;
+	position: absolute;
+	top: -5px;
+	right: 6px;
 }
 .bell-icon {
 	fill: white;
 	width: 20px;
 	height: 20px;
 }
-.header-profile-img {
-	border-radius: 100%;
-	width: 40px;
-	height: 40px;
-}
-.header-name {
-	font-size: 12px;
-}
-.notification-container {
-	border-right: 1px solid rgb(211, 211, 211);
-	height: 100%;
-	padding: 0 10px;
-}
-.notification-container .dot {
-	width: 5px;
-	height: 5px;
-	background-color: rgb(92, 255, 92);
-	border-radius: 50%;
-}
+
 /* nav */
 .nav {
 	grid-area: nav;
