@@ -1,0 +1,17 @@
+for (let i = 0; i < trafficList.length; i++) {
+	trafficList[i].addEventListener("click", function () {
+		if (trafficList[i].dataset.traffic === "hourlyTraffic") {
+			console.log("hourly traffic");
+			return (trafficData = {
+				labels: trafficDataLabels[0],
+				datasets: trafficDataSets[1],
+			});
+		} else if (trafficList[i].dataset.traffic === "dailyTraffic") {
+			console.log("daily traffic");
+			return (trafficData = {
+				labels: trafficDataLabels[0],
+				datasets: trafficDataSets[0],
+			});
+		}
+	});
+}
