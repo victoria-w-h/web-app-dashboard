@@ -98,17 +98,15 @@ let trafficData1 = {
 
 let trafficData2 = {
 	labels: [
-		"1-22",
-		"23-29",
-		"30-5",
-		"6-12",
-		"13-19",
-		"20-26",
-		"27-3",
-		"4-10",
-		"11-17",
-		"18-24",
-		"25-31",
+		"12-2",
+		"3-5",
+		"6-8",
+		"9-11",
+		"12-14",
+		"15-17",
+		"18-20",
+		"21-22",
+		"23-12",
 	],
 	datasets: [
 		{
@@ -121,22 +119,12 @@ let trafficData2 = {
 };
 
 let trafficData3 = {
-	labels: [
-		"1-22",
-		"23-29",
-		"30-5",
-		"6-12",
-		"13-19",
-		"20-26",
-		"27-3",
-		"4-10",
-		"11-17",
-		"18-24",
-		"25-31",
-	],
+	labels: ["Mo", "Tu", "We", "Th", "Fr", "Sa", "Su"],
 	datasets: [
 		{
-			data: [700, 750, 700, 1200, 1300, 1750, 950, 1350, 950, 1500, 1300],
+			data: [
+				500, 1250, 700, 1200, 1300, 1750, 950, 1350, 950, 1500, 1300,
+			],
 			backgroundColor: "rgba(116, 119, 191, .4)",
 			borderWidth: 1,
 			fill: true,
@@ -145,19 +133,7 @@ let trafficData3 = {
 };
 
 let trafficData4 = {
-	labels: [
-		"1-22",
-		"23-29",
-		"30-5",
-		"6-12",
-		"13-19",
-		"20-26",
-		"27-3",
-		"4-10",
-		"11-17",
-		"18-24",
-		"25-31",
-	],
+	labels: ["1-4", "5-8", "9-11", "12-15", "16-19", "20-23", "24-27", "28-31"],
 	datasets: [
 		{
 			data: [
@@ -210,10 +186,6 @@ for (let i = 0; i < trafficList.length; i++) {
 		current[0].classList.remove("traffic-active");
 		trafficTerm.classList.add("traffic-active");
 	});
-}
-
-for (let i = 0; i < trafficList.length; i++) {
-	let trafficTerm = trafficList[i];
 	trafficTerm.addEventListener("click", (e) => {
 		let selectedTerm = trafficTerm.dataset.traffic;
 		if (selectedTerm === "hourlyTraffic") {

@@ -412,7 +412,6 @@ h4 {
 	}
 }
 /* message user form */
-
 input,
 textarea,
 select {
@@ -421,6 +420,9 @@ select {
 	border-radius: 5px;
 	padding: 10px;
 	font-size: 14px;
+}
+textarea {
+	resize: none;
 }
 .button-primary {
 	background-color: var(--primary);
@@ -510,4 +512,7 @@ select:nth-child(1) {
 .close:hover .close-btn-svg path,
 .close:focus .close-btn-svg path {
 	fill: var(--primary);
+}
+datalist option {
+	width: 500px;
 }
