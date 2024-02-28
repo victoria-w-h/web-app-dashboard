@@ -1,8 +1,20 @@
-# web-app-dashboard
+# Web App Dashboard
 
-Web-app dashboard, project 7
+-   Web App Dashboard (project 7 on treehouse).
+-   A dashboard to show statistics , members and more.
+-   Mobile first approach has been used, and grid has been used to create main layout.
 
-# mobile-first
+## Libraries used
 
-    - Grid has been used to create main layout of the page
-    - A mobile-first approach has been implemented using media queries.
+CDNs used.
+
+-   Sweet alert (swal) - for form validation
+-   Chart js - for graphs
+-   Bootstrap - for toggle button only
+
+## Features
+
+-   Nav links scroll down to appropriate sections
+-   Alert notification can be removed by clicking x
+-   Bell notification has animation on hover and on click displays a popup modal of notifications - clicking outside or on the x can close the modal.
+-   Message user widget validates form inputs and displays an alert when recieved.
