@@ -512,7 +512,8 @@
 										id="email-switch-label">
 										<input
 											type="checkbox"
-											id="email-switch-check" />
+											id="email-switch-check"
+											checked />
 										<span class="slider round"></span>
 									</label>
 								</div>
@@ -532,13 +533,22 @@
 							<!-- new -->
 							<div class="custom-select">
 								<select name="timezone" id="timezone">
-									<option value="select-timezone">
+									<option
+										value="select-timezone"
+										disabled
+										selected>
 										Select Timezone
 									</option>
-									<option value="gmt">GMT (London)</option>
-									<option value="mmt">MMT (Yangon)</option>
-									<option value="mmt">CET (Brussels)</option>
-									<option value="mmt">
+									<option value="GMT london">
+										GMT (London)
+									</option>
+									<option value="MMT yangon">
+										MMT (Yangon)
+									</option>
+									<option value="CET brussels">
+										CET (Brussels)
+									</option>
+									<option value="ART buenos-aires">
 										ART (Buenos Aires)
 									</option>
 								</select>
@@ -549,7 +559,9 @@
 									id="setting-save">
 									save
 								</button>
-								<button class="button-primary btn-grey">
+								<button
+									class="button-primary btn-grey"
+									id="setting-cancel">
 									cancel
 								</button>
 							</div>

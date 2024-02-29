@@ -29,8 +29,47 @@ const emailSwitchCheckbox = document.getElementById("email-switch-check");
 const profileSwitchCheckbox = document.getElementById("profile-switch-check");
 
 const settingSave = document.getElementById("setting-save");
+const settingCancel = document.getElementById("setting-cancel");
 
-window.onload = function () {
+function checkEmailPreference() {
+	if (emailSwitchCheckbox.checked) {
+		localStorage.setItem("Email Preference", "on");
+	} else {
+		localStorage.setItem("Email Preference", "off");
+	}
+}
+
+function checkProfilePreference() {
+	if (profileSwitchCheckbox.checked) {
+		localStorage.setItem("Profile Preference", "on");
+	} else {
+		localStorage.setItem("Profile Preference", "off");
+	}
+}
+settingSave.addEventListener("click", checkEmailPreference);
+settingSave.addEventListener("click", checkProfilePreference);
+
+// cancel settings and reset to default
+settingCancel.addEventListener("click", clearAndDefault);
+
+// timezone
+const settings = document.getElementById("settings");
+const timezoneSelect = document.getElementById("timezone");
+
+settings.addEventListener("submit", (e) => {
+	e.preventDefault();
+});
+
+function getTimezone() {
+	const timezoneSelectValue = timezoneSelect.value;
+	// set local storage
+	localStorage.setItem("Timezone", timezoneSelectValue);
+	console.log(timezoneSelectValue);
+}
+
+settingSave.addEventListener("click", getTimezone);
+
+function setToggles() {
 	const emailStorageOn = localStorage.getItem("Email Preference") === "on";
 	const profileStorageOn =
 		localStorage.getItem("Profile Preference") === "on";
@@ -48,26 +87,23 @@ window.onload = function () {
 		emailSwitchCheckbox.checked = false;
 		profileSwitchCheckbox.checked = false;
 	}
+}
+function setTimezone() {
+	const timezoneStorage = localStorage.getItem("timezone");
+	if (timezoneStorage) {
+		timezoneSelect.value = timezoneStorage;
+	}
+}
+
+window.onload = function () {
+	setTimezone();
+	setToggles();
 };
 
-function checkEmailPreference() {
-	if (emailSwitchCheckbox.checked) {
-		console.log("email preference is on");
-		localStorage.setItem("Email Preference", "on");
-	} else {
-		console.log("email preference is off");
-		localStorage.setItem("Email Preference", "off");
-	}
+function clearAndDefault() {
+	console.log("both are checked");
+	localStorage.clear();
+	emailSwitchCheckbox.checked = false;
+	profileSwitchCheckbox.checked = false;
+	timezoneSelect.value = "select-timezone";
 }
-
-function checkProfilePreference() {
-	if (profileSwitchCheckbox.checked) {
-		console.log("profile preference is on");
-		localStorage.setItem("Profile Preference", "on");
-	} else {
-		console.log("Profile preference is off");
-		localStorage.setItem("Profile Preference", "off");
-	}
-}
-settingSave.addEventListener("click", checkEmailPreference);
-settingSave.addEventListener("click", checkProfilePreference);
