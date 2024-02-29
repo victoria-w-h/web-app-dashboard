@@ -1,0 +1,28 @@
+window.onload = function () {
+	const emailStorageOn = localStorage.getItem("Email Preference") === "on";
+	const profileStorageOn =
+		localStorage.getItem("Profile Preference") === "on";
+
+	if (
+		localStorage.getItem("Email Preference") === "on" &&
+		localStorage.getItem("Profile Preference") === "on"
+	) {
+		emailSwitchCheckbox.checked = true;
+		profileSwitchCheckbox.checked = true;
+	} else if (
+		localStorage.getItem("Email Preference") === "on" &&
+		localStorage.getItem("Profile Preference") === "off"
+	) {
+		emailSwitchCheckbox.checked = true;
+		profileSwitchCheckbox.checked = false;
+	} else if (
+		localStorage.getItem("Email Preference") === "off" &&
+		localStorage.getItem("Profile Preference") === "on"
+	) {
+		emailSwitchCheckbox.checked = false;
+		profileSwitchCheckbox.checked = true;
+	} else {
+		emailSwitchCheckbox.checked = false;
+		profileSwitchCheckbox.checked = false;
+	}
+};

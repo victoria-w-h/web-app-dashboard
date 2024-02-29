@@ -504,57 +504,29 @@
 						<h3>Settings</h3>
 						<form action="" class="flex flex-col">
 							<div>
-								<!-- toggle switch -->
 								<div
-									class="flex justify-between toggle-switch-emails">
-									<p>Send Email Notifications</p>
-									<div
-										class="switch-toggle alert alert-light">
+									class="toggles flex justify-between align-items-center">
+									<p>Send email notifications</p>
+									<label
+										class="switch"
+										id="email-switch-label">
 										<input
-											id="email-on"
-											name="emails"
-											type="radio"
-											checked />
-										<label for="email-on" onclick=""
-											>ON</label
-										>
-
-										<input
-											id="email-off"
-											name="emails"
-											type="radio" />
-										<label for="email-off" onclick=""
-											>OFF</label
-										>
-
-										<a class="btn bs-btn-primary"></a>
-									</div>
+											type="checkbox"
+											id="email-switch-check" />
+										<span class="slider round"></span>
+									</label>
 								</div>
-								<!-- new -->
 								<div
-									class="flex justify-between toggle-switch-profile">
-									<p>Set Profile to Public</p>
-									<div
-										class="switch-toggle alert alert-light">
+									class="toggles flex justify-between align-items-center">
+									<p>Set profile to public</p>
+									<label
+										class="switch"
+										id="profile-switch-label">
 										<input
-											id="profile-on"
-											name="profile"
-											type="radio"
-											checked />
-										<label for="profile-on" onclick="">
-											ON
-										</label>
-
-										<input
-											id="profile-off"
-											name="profile"
-											type="radio" />
-										<label for="profile-off" onclick=""
-											>OFF</label
-										>
-
-										<a class="btn bs-btn-primary"></a>
-									</div>
+											type="checkbox"
+											id="profile-switch-check" />
+										<span class="slider round"></span>
+									</label>
 								</div>
 							</div>
 							<!-- new -->
@@ -572,7 +544,11 @@
 								</select>
 							</div>
 							<div class="flex gap10">
-								<button class="button-primary">save</button>
+								<button
+									class="button-primary"
+									id="setting-save">
+									save
+								</button>
 								<button class="button-primary btn-grey">
 									cancel
 								</button>
