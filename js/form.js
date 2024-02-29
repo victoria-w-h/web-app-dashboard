@@ -98,7 +98,7 @@ window.onload = function () {
 	setTimezone();
 	setToggles();
 };
-
+// clear local storage and set back to default off and select-timezone
 function clearAndDefault() {
 	console.log("both are checked");
 	localStorage.clear();

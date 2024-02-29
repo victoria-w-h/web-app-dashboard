@@ -10,7 +10,6 @@ CDNs used.
 
 -   Sweet alert (swal) - for form validation
 -   Chart js - for graphs
--   Bootstrap - for toggle button only
 
 ## Features
 
@@ -18,3 +17,6 @@ CDNs used.
 -   Alert notification can be removed by clicking x
 -   Bell notification has animation on hover and on click displays a popup modal of notifications - clicking outside or on the x can close the modal.
 -   Message user widget validates form inputs and displays an alert when recieved.
+-   Can save settings to local storage and cancel back to default
+
+** to be continued **

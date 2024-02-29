@@ -37,15 +37,43 @@ button {
 	border: none;
 	cursor: pointer;
 }
-/* class styles */
+h1 {
+	font-size: 22px;
+	margin: auto 0;
+	font-weight: 400;
+}
+h2 {
+	margin: 0;
+	padding: 25px 20px;
+	font-weight: 500;
+	font-size: 18px;
+}
+h3 {
+	text-transform: uppercase;
+	font-size: 15px;
+	font-weight: 500;
+	margin: 20px 0;
+}
+h4 {
+	color: var(--primary);
+	font-weight: 500;
+	margin: 0;
+}
+hr {
+	margin: 30px 0;
+}
+/* ------------------------ Utility classes -------------------- */
+
+/* Displays */
+
 .grid {
 	display: grid;
 }
-.flex {
-	display: flex;
-}
 .hide {
 	display: none;
+}
+.flex {
+	display: flex;
 }
 .flex-col {
 	flex-direction: column;
@@ -53,20 +81,22 @@ button {
 .align-items-center {
 	align-items: center;
 }
-
 .justify-between {
 	justify-content: space-between;
 }
 .space-around {
 	justify-content: space-around;
 }
+.gap10 {
+	gap: 10px;
+}
+
+/* Text Styles */
 
 .font-medium {
 	font-weight: 600;
 }
-.gap10 {
-	gap: 10px;
-}
+
 .underline {
 	text-decoration: underline;
 	text-underline-offset: 4px;
@@ -93,28 +123,20 @@ button {
 
 .header {
 	grid-area: header;
-
 	padding: 20px 10px;
-
 	color: var(--white);
 	background-color: var(--primary);
 }
 
-h1 {
-	font-size: 22px;
-	margin: auto 0;
-}
 /* Header profile */
 
 .header-profile {
 	padding: 10px 0 10px 10px;
-
 	border-left: 1px solid var(--grey);
 }
 
 .header-profile-img {
 	border-radius: 100%;
-
 	width: 40px;
 	height: 40px;
 }
@@ -180,7 +202,6 @@ h1 {
 
 .nav {
 	grid-area: nav;
-
 	background-color: var(--accent);
 }
 .nav ul {
@@ -216,17 +237,12 @@ h1 {
 	border-left: 1px solid #ccc;
 	border-bottom: 1px solid #ccc;
 }
-h2 {
-	margin: 0;
-	padding: 25px 20px;
-	font-weight: 500;
-	font-size: 18px;
-}
+
 .main-container {
 	padding: 20px 15px;
 }
 /*----------------------- ALERT CONTAINER -------------------------*/
-
+/* used for the popup window aswell */
 .alert-container {
 	position: relative;
 }
@@ -249,17 +265,7 @@ h2 {
 	cursor: pointer;
 }
 /*----------------------- GRAPHS -------------------------*/
-h3 {
-	text-transform: uppercase;
-	font-size: 15px;
-	font-weight: 500;
-	margin: 20px 0;
-}
-hr {
-	margin: 30px 0;
-}
 
-/*--------- Traffic graph ----------*/
 .traffic-list {
 	margin: 30px auto;
 	max-width: 270px;
@@ -273,8 +279,7 @@ hr {
 	border-radius: 50px;
 	color: var(--white);
 }
-/*--------- Daily Traffic graph ----------*/
-/*--------- Mobile Users graph ----------*/
+
 @media screen and (min-width: 768px) {
 	.multi-graph-cont {
 		grid-template-columns: 1fr 1fr;
@@ -299,7 +304,8 @@ hr {
 		margin: 0 0 30px auto;
 	}
 }
-/* social container */
+/*----------------------- SOCIAL CONTAINER -------------------------*/
+
 .social-box-cont {
 	gap: 15px;
 }
@@ -316,11 +322,6 @@ hr {
 	gap: 15px;
 }
 
-h4 {
-	color: var(--primary);
-	font-weight: 500;
-	margin: 0;
-}
 .social-box-svg svg {
 	width: 30px;
 	height: 30px;
@@ -338,7 +339,8 @@ h4 {
 	font-size: 40px;
 	color: var(--darkGrey);
 }
-/* new members */
+/*----------------------- NEW MEMBERS -------------------------*/
+
 .member-image {
 	width: 60px;
 	height: 60px;
@@ -411,7 +413,8 @@ h4 {
 		height: 128px;
 	}
 }
-/* message user form */
+/*----------------------- FORMS -------------------------*/
+
 input,
 textarea,
 select {
@@ -438,42 +441,44 @@ textarea {
 .btn-grey {
 	background-color: var(--darkGrey);
 }
-.bs-btn-primary {
-	background-color: var(--primary);
-	color: var(--white);
+
+/* select */
+
+.custom-select {
+	width: 100%;
+	overflow: hidden;
+	position: relative;
+	padding: 5px 0;
+	margin: 10px 0 35px;
+	background-color: var(--grey);
+	border: 2px solid #ccc;
+	border-radius: 5px;
 }
-.switch-toggle label {
-	color: white;
+.custom-select:after {
+	width: 0;
+	height: 0;
+	border-left: 8px solid transparent;
+	border-right: 8px solid transparent;
+	border-top: 8px solid var(--primary);
+	position: absolute;
+	top: 40%;
+	right: 10px;
+	content: "";
+	z-index: 1;
 }
-select {
-	-moz-appearance: none; /* Firefox */
-	-webkit-appearance: none; /* Safari and Chrome */
+.custom-select select {
 	appearance: none;
 	width: 100%;
-	margin: 20px 0;
-	background-image: url("images/select-arrow.png");
-	background-repeat: no-repeat;
-	background-position-x: 97%;
-	background-position-y: 12px;
-	border: 1px solid #dfdfdf;
+	border: 0;
+	position: relative;
+	z-index: 1;
+	background: none;
 }
+
 select:nth-child(1) {
 	color: var(--darkGrey);
 }
-.toggle-switch-emails p,
-.toggle-switch-profile p {
-	margin: auto 0;
-}
-.switch-toggle {
-	margin: auto 0;
-}
-.toggle-switch-profile {
-	margin: 30px 0 10px 0;
-}
-.toggle-switch-emails,
-.toggle-switch-profile {
-	max-width: 400px;
-}
+
 /* Notification overlay */
 
 .notify-overlay {
