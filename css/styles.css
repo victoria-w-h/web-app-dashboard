@@ -8,6 +8,9 @@
 }
 
 /* element styling */
+html {
+	scroll-behavior: smooth;
+}
 body {
 	margin: 0;
 	font-family: "Raleway", sans-serif;
@@ -423,6 +426,7 @@ select {
 	border-radius: 5px;
 	padding: 10px;
 	font-size: 14px;
+	font-family: "Raleway", sans-serif;
 }
 textarea {
 	resize: none;
