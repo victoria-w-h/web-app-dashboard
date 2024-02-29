@@ -64,7 +64,6 @@ function getTimezone() {
 	const timezoneSelectValue = timezoneSelect.value;
 	// set local storage
 	localStorage.setItem("Timezone", timezoneSelectValue);
-	console.log(timezoneSelectValue);
 }
 
 settingSave.addEventListener("click", getTimezone);
@@ -89,7 +88,7 @@ function setToggles() {
 	}
 }
 function setTimezone() {
-	const timezoneStorage = localStorage.getItem("timezone");
+	const timezoneStorage = localStorage.getItem("Timezone");
 	if (timezoneStorage) {
 		timezoneSelect.value = timezoneStorage;
 	}
